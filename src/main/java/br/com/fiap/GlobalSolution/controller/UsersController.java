@@ -19,45 +19,45 @@ public class UsersController {
     private @Setter UsersService service;
 
     @GetMapping("/addNewUsers")
-    public String addNewUsers( Model model ){
+    public String addNewUsers(Model model) {
         Users use = new Users();
         model.addAttribute("users", use);
         return "newUsers";
     }
 
     @PostMapping("/saveUsers")
-    public String save( @ModelAttribute("users") Users users ){
-        this.service.save( users );
-        return "redirect:/users";
+    public String save(@ModelAttribute("users") Users users) {
+        this.service.save(users);
+        return "redirect:/indexUsers";
     }
 
     @GetMapping("/deleteUsers/{id}")
-    public String  deleteThroughId( @PathVariable("id") Long id){
+    public String deleteThroughId(@PathVariable("id") Long id) {
         this.service.deleteById(id);
-        return "redirect:/users";
+        return "redirect:/indexUsers";
     }
 
     @GetMapping("/users")
-    public String viewHomePageAsList(Model model){
+    public String viewHomePageAsList(Model model) {
         Collection<Users> usersList = this.service.findAll();
+        System.out.println("Users List Size: " + usersList.size());
         model.addAttribute("allUsersList", usersList);
         return "indexUsers";
     }
 
     @GetMapping("/showFormForUpdateUsers/{id}")
-    public String showUpdateForm(@PathVariable("id") Long id, Model model){
-        Optional<Users> users  = this.service.findById(id);
-        if(users.isPresent())
+    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+        Optional<Users> users = this.service.findById(id);
+        if (users.isPresent())
             model.addAttribute("users", users.get());
         else
             System.out.println("Error");
         return "updateUsers";
-
     }
 
     @PostMapping("/updateUsers")
-    public String update( @ModelAttribute("users") Users users ){
-        this.service.save( users );
-        return "redirect:/users";
+    public String update(@ModelAttribute("users") Users users) {
+        this.service.save(users);
+        return "redirect:/indexUsers";
     }
 }

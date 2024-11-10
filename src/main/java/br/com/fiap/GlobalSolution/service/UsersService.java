@@ -13,27 +13,43 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class UsersService implements ServiceDTO<Users, UsersRequest, UsersResponse>{
+public class UsersService implements ServiceDTO<Users, UsersRequest, UsersResponse> {
 
     @Autowired
     private UsersRepository repo;
 
     @Override
-    public List<Users> findAll() {return this.repo.findAll();}
-
-    @Override
-    public Optional<Users> findById(final long id) {return this.repo.findById(id);}
-
-    @Override
-    public Users save(Users a) {
-        return repo.save(a);
+    public List<Users> findAll() {
+        return this.repo.findAll();
     }
 
     @Override
-    public void delete(final Users e){this.repo.delete(e);}
+    public Optional<Users> findById(final long id) {
+        return this.repo.findById(id);
+    }
 
     @Override
-    public void deleteById(final long id){this.repo.deleteById(id);}
+    public Users save(Users a) {
+        System.out.println("Attempting to save user: " + a);
+        try {
+            repo.save(a);
+            System.out.println("User saved successfully: " + a);
+        } catch (Exception e) {
+            System.out.println("Error saving user: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return a;
+    }
+
+    @Override
+    public void delete(final Users e) {
+        this.repo.delete(e);
+    }
+
+    @Override
+    public void deleteById(final long id) {
+        this.repo.deleteById(id);
+    }
 
     public Users findByIdUsers(Long id) {
         return repo.findById(id).orElse(null);
@@ -41,7 +57,6 @@ public class UsersService implements ServiceDTO<Users, UsersRequest, UsersRespon
 
     @Override
     public Users toEntity(UsersRequest dto) {
-
         return Users.builder()
                 .username(dto.username())
                 .email(dto.email())
@@ -51,7 +66,6 @@ public class UsersService implements ServiceDTO<Users, UsersRequest, UsersRespon
 
     @Override
     public UsersResponse toResponse(Users e) {
-
         return UsersResponse.builder()
                 .id(e.getId())
                 .username(e.getUsername())
