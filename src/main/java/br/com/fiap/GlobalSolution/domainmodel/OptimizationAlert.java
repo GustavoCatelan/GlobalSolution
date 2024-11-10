@@ -30,7 +30,7 @@ public class OptimizationAlert {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
             name = "TELEPHONE",
-            referencedColumnName = "ID_TELEPHONE",
+            referencedColumnName = "ID_TEL",
             foreignKey = @ForeignKey(
                     name = "FK_OPTIMIZATION_ALERT_TELEPHONE"
             )

@@ -14,16 +14,16 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USER")
+    @Column(name = "ID_USERS")
     private @Getter @Setter Long id;
 
-    @Column(name = "NM_USER")
+    @Column(name = "NM_USERS")
     private @Getter @Setter String username;
 
-    @Column(name = "EMAIL_USER")
+    @Column(name = "EMAIL_USERS")
     private @Getter @Setter String email;
 
-    @Column(name = "PASS_USER")
+    @Column(name = "PASS_USERS")
     private @Getter @Setter String password;
 
     @Override
