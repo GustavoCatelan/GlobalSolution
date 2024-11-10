@@ -1,6 +1,8 @@
 package br.com.fiap.GlobalSolution.dto.response;
 
+import lombok.Builder;
 
+@Builder
 public record AddressResponse(
 
         Long id,
