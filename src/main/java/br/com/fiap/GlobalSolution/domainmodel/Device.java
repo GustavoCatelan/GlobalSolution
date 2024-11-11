@@ -18,11 +18,6 @@ public class Device {
     @Column(name = "ID_DEVICE")
     private @Getter @Setter Long id;
 
-    @Override
-    public String toString() {
-        return String.valueOf(this.id);
-    }
-
     @Column(name = "TYPE_DEVICE")
     private @Getter @Setter String type;
 

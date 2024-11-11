@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Address List</title>
+    <title>Incentive Score List</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -95,40 +95,32 @@
 
 <body>
 <div class="container" align="center">
-    <h3>Address List</h3>
-    <a th:href="@{addNewAddress}" class="btn btn-primary btn-sm btn-mb-3">Add Address</a>
-    <table border="1" class="table table-striped table-responsive-md">
+    <h3>Incentive Score List</h3>
+    <a th:href="@{/addNewIncentiveScore}" class="btn btn-primary btn-sm btn-mb-3">Add Incentive Score</a>
+    <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
         <thead>
         <tr>
-            <th >CEP</th>
-            <th>Street</th>
-            <th>Number</th>
-            <th>Complement</th>
-            <th>Neighborhood</th>
-            <th>City</th>
-            <th>State</th>
+            <th>Point</th>
+            <th>Target</th>
+            <th>Date</th>
             <th>User ID</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="address : ${allAddressList}">
-            <td th:text="${address.cep}"></td>
-            <td th:text="${address.street}"></td>
-            <td th:text="${address.number}"></td>
-            <td th:text="${address.complement}"></td>
-            <td th:text="${address.neighborhood}"></td>
-            <td th:text="${address.city}"></td>
-            <td th:text="${address.state}"></td>
-            <td th:text="${address.users}"></td>
+        <tr th:each="incentiveScore : ${allIncentiveScoreList}">
+            <td th:text="${incentiveScore.point}"></td>
+            <td th:text="${incentiveScore.target}"></td>
+            <td th:text="${incentiveScore.date}"></td>
+            <td th:text="${incentiveScore.users}"></td>
             <td>
-                <a th:href="@{/showFormForUpdateAddress/{id}(id=${address.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteAddress/{id}(id=${address.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/showFormForUpdateIncentiveScore/{id}(id=${incentiveScore.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteIncentiveScore/{id}(id=${incentiveScore.id})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/home}" class="back-home">Back to Home</a>
+    <a th:href="@{/home}">Back to Home</a>
 </div>
 </body>
 </html>

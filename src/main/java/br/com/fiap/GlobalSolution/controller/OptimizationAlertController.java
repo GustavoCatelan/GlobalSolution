@@ -30,7 +30,7 @@ public class OptimizationAlertController {
         return "redirect:/optimizationAlert";
     }
 
-    @GetMapping("/deleteIncentiveScore/{id}")
+    @GetMapping("/deleteOptimizationAlert/{id}")
     public String deleteThroughId( @PathVariable("id") Long id){
         this.service.deleteById(id);
         return "redirect:/optimizationAlert";

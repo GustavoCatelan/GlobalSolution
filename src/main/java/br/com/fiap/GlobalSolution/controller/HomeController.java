@@ -31,5 +31,24 @@ public class HomeController {
         return "indexTelephone";
     }
 
+    @GetMapping("/indexDevice")
+    public String indexDevice() {
+        return "indexDevice";
+    }
+
+    @GetMapping("/indexIncentiveScore")
+    public String indexIncentiveScore() {
+        return "indexIncentiveScore";
+    }
+
+    @GetMapping("/indexOptimizationAlert")
+    public String indexOptimizationAlert() {
+        return "indexOptimizationAlert";
+    }
+
+    @GetMapping("/indexEnergyReading")
+    public String indexEnergyReading() {
+        return "indexEnergyReading";
+    }
 
 }
