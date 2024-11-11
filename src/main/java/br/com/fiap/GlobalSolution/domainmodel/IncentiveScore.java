@@ -14,7 +14,8 @@ import java.util.Objects;
 public class IncentiveScore {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_INCENTIVE_SCORE")
+    @SequenceGenerator(name = "SQ_INCENTIVE_SCORE", sequenceName = "SQ_INCENTIVE_SCORE", allocationSize = 1)
     @Column(name = "ID_INCENTIVE_SCORE")
     private @Getter @Setter Long id;
 

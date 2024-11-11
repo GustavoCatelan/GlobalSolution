@@ -79,7 +79,7 @@
   <h1>Users Management System</h1>
   <hr>
   <h2>Users Update</h2>
-  <form action="#" th:action="@{/users/saveUsers}" th:object="${users}" method="POST">
+  <form action="#" th:action="@{/updateUsers}" th:object="${users}" method="POST">
     <input type="hidden" th:field="*{id}"/>
     <div class="form-group">
       <input type="text" th:field="*{username}" placeholder="Username" class="form-control">

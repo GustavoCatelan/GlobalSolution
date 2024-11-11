@@ -1,6 +1,7 @@
 package br.com.fiap.GlobalSolution.service;
 
 import br.com.fiap.GlobalSolution.datasource.UsersRepository;
+import br.com.fiap.GlobalSolution.domainmodel.Address;
 import br.com.fiap.GlobalSolution.domainmodel.Users;
 import br.com.fiap.GlobalSolution.dto.request.UsersRequest;
 import br.com.fiap.GlobalSolution.dto.response.UsersResponse;
@@ -29,17 +30,7 @@ public class UsersService implements ServiceDTO<Users, UsersRequest, UsersRespon
     }
 
     @Override
-    public Users save(Users a) {
-        System.out.println("Attempting to save user: " + a);
-        try {
-            repo.save(a);
-            System.out.println("User saved successfully: " + a);
-        } catch (Exception e) {
-            System.out.println("Error saving user: " + e.getMessage());
-            e.printStackTrace();
-        }
-        return a;
-    }
+    public Users save(Users a) {return repo.save(a);}
 
     @Override
     public void delete(final Users e) {

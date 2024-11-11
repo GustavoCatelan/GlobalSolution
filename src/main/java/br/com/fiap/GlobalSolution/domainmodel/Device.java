@@ -13,9 +13,15 @@ import java.util.Objects;
 public class Device {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DEVICE")
+    @SequenceGenerator(name = "SQ_DEVICE", sequenceName = "SQ_DEVICE", allocationSize = 1)
     @Column(name = "ID_DEVICE")
     private @Getter @Setter Long id;
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
 
     @Column(name = "TYPE_DEVICE")
     private @Getter @Setter String type;

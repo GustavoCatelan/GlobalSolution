@@ -13,9 +13,15 @@ import java.util.Objects;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_USERS")
+    @SequenceGenerator(name = "SQ_USERS", sequenceName = "SQ_USERS", allocationSize = 1)
     @Column(name = "ID_USERS")
     private @Getter @Setter Long id;
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
 
     @Column(name = "NM_USERS")
     private @Getter @Setter String username;

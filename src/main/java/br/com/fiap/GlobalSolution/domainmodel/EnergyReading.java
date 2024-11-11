@@ -16,7 +16,8 @@ import java.util.Set;
 public class EnergyReading {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_ENERGY_READING")
+    @SequenceGenerator(name = "SQ_ENERGY_READING", sequenceName = "SQ_ENERGY_READING", allocationSize = 1)
     @Column(name = "ID_ENERGY_READING")
     private @Getter @Setter Long id;
 

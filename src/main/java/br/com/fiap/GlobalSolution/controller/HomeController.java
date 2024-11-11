@@ -16,29 +16,14 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/indexUsers")
+    public String indexUsers() {
+        return "indexUsers";
+    }
+
     @GetMapping("/indexAddress")
     public String indexAddress() {
         return "indexAddress";
-    }
-
-    @GetMapping("/indexEvaluation")
-    public String indexEvaluation() {
-        return "indexEvaluation";
-    }
-
-    @GetMapping("/indexDistributor")
-    public String indexDistributor() {
-        return "indexDistributor";
-    }
-
-    @GetMapping("/indexLegalPerson")
-    public String indexLegalPerson() {
-        return "indexLegalPerson";
-    }
-
-    @GetMapping("/indexPhysicalPerson")
-    public String indexPhysicalPerson() {
-        return "indexPhysicalPerson";
     }
 
     @GetMapping("/indexTelephone")
@@ -46,24 +31,5 @@ public class HomeController {
         return "indexTelephone";
     }
 
-    @GetMapping("/indexUsers")
-    public String indexUsers() {
-        return "indexUsers";
-    }
-
-    @GetMapping("/indexProduct")
-    public String indexProduct() {
-        return "indexProduct";
-    }
-
-    @GetMapping("/indexService")
-    public String indexService() {
-        return "indexService";
-    }
-
-    @GetMapping("/indexIa")
-    public String indexIa() {
-        return "indexIa";
-    }
 
 }

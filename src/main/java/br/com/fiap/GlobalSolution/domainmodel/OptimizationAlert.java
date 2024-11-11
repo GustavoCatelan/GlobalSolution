@@ -14,7 +14,8 @@ import java.util.Objects;
 public class OptimizationAlert {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_OPTIMIZATION_ALERT")
+    @SequenceGenerator(name = "SQ_OPTIMIZATION_ALERT", sequenceName = "SQ_OPTIMIZATION_ALERT", allocationSize = 1)
     @Column(name = "ID_ALERT")
     private @Getter @Setter Long id;
 

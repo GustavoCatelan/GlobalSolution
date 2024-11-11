@@ -30,9 +30,7 @@ public class AddressService implements ServiceDTO<Address, AddressRequest, Addre
     public Optional<Address> findById(final long id) {return this.repo.findById(id);}
 
     @Override
-    public Address save(Address a) {
-        return repo.save(a);
-    }
+    public Address save(Address a) {return repo.save(a);}
 
     @Override
     public void delete(final Address e){this.repo.delete(e);}

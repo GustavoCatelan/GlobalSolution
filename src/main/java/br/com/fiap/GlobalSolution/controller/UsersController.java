@@ -12,7 +12,6 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/users")
 public class UsersController {
 
     @Autowired
@@ -28,19 +27,18 @@ public class UsersController {
     @PostMapping("/saveUsers")
     public String save(@ModelAttribute("users") Users users) {
         this.service.save(users);
-        return "redirect:/indexUsers";
+        return "redirect:/users";
     }
 
     @GetMapping("/deleteUsers/{id}")
     public String deleteThroughId(@PathVariable("id") Long id) {
         this.service.deleteById(id);
-        return "redirect:/indexUsers";
+        return "redirect:/users";
     }
 
     @GetMapping("/users")
     public String viewHomePageAsList(Model model) {
         Collection<Users> usersList = this.service.findAll();
-        System.out.println("Users List Size: " + usersList.size());
         model.addAttribute("allUsersList", usersList);
         return "indexUsers";
     }
@@ -58,6 +56,6 @@ public class UsersController {
     @PostMapping("/updateUsers")
     public String update(@ModelAttribute("users") Users users) {
         this.service.save(users);
-        return "redirect:/indexUsers";
+        return "redirect:/users";
     }
 }
