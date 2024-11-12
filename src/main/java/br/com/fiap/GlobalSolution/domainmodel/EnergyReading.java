@@ -30,26 +30,15 @@ public class EnergyReading {
     @Column(name = "PRODUCTION_ENERGY_READING")
     private @Getter @Setter String production;
 
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade = {CascadeType.MERGE, CascadeType.PERSIST}
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "DEVICE",
+            referencedColumnName = "ID_DEVICE",
+            foreignKey = @ForeignKey(
+                    name = "FK_ENERGY_READING_DEVICE"
+            )
     )
-    @JoinTable(
-            name = "DEVICE_ENERGY_READING",
-            joinColumns = {
-                    @JoinColumn(
-                            name = "ENERGY_READING",
-                            referencedColumnName = "ID_ENERGY_READING",
-                            foreignKey = @ForeignKey(name = "FK_ENERGY_READING_DEVICE"))
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(
-                            name = "DEVICE",
-                            referencedColumnName = "ID_DEVICE",
-                            foreignKey = @ForeignKey(name = "FK_DEVICE_ENERGY_READING"))
-            }
-    )
-    private @Getter @Setter Set<Device> device = new LinkedHashSet<>();
+    private @Getter @Setter Device device;
 
     @Override
     public boolean equals(Object o) {

@@ -113,10 +113,6 @@
       <td th:text="${optimizationAlert.description}"></td>
       <td th:text="${optimizationAlert.date}"></td>
       <td th:text="${optimizationAlert.telephone}"></td>
-      <td>
-        <a th:href="@{/showFormForUpdateOptimizationAlert/{id}(id=${optimizationAlert.id})}" class="btn btn-primary">Update</a>
-        <a th:href="@{/deleteOptimizationAlert/{id}(id=${optimizationAlert.id})}" class="btn btn-danger">Delete</a>
-      </td>
     </tr>
     </tbody>
   </table>

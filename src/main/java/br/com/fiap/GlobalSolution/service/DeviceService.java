@@ -2,6 +2,7 @@ package br.com.fiap.GlobalSolution.service;
 
 import br.com.fiap.GlobalSolution.datasource.DeviceRespository;
 import br.com.fiap.GlobalSolution.domainmodel.Device;
+import br.com.fiap.GlobalSolution.domainmodel.Users;
 import br.com.fiap.GlobalSolution.dto.request.DeviceRequest;
 import br.com.fiap.GlobalSolution.dto.response.DeviceResponse;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,10 @@ public class DeviceService implements ServiceDTO<Device, DeviceRequest, DeviceRe
 
     @Override
     public Optional<Device> findById(final long id) {return this.repo.findById(id);}
+
+    public Device findByIdDevice(Long id) {
+        return repo.findById(id).orElse(null);
+    }
 
     @Override
     public Device save(Device a) {

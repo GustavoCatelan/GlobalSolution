@@ -33,7 +33,10 @@
             margin: 20px auto;
         }
 
-        .btn-mb-3 {
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
@@ -90,14 +93,43 @@
         a.back-home:hover {
             color: #0056b3;
         }
+
+        .energy-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .energy-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .energy-btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-sm {
+            font-size: 14px;
+            padding: 5px 10px;
+        }
     </style>
 </head>
 
 <body>
 <div class="container" align="center">
     <h3>Device List</h3>
-    <a th:href="@{/addNewDevice}" class="btn btn-primary btn-sm btn-mb-3">Add Device</a>
-    <table style="width: 80%" border="1" class="table table-stripped table-responsive-md">
+    <div class="btn-group">
+        <a th:href="@{/addNewDevice}" class="btn btn-primary btn-sm">Add Device</a>
+        <a th:href="@{/energyReading}" class="energy-btn btn-sm">Energy Reading</a>
+    </div>
+    <table style="width: 80%" border="1" class="table table-striped table-responsive-md">
         <thead>
         <tr>
             <th>Type</th>
@@ -120,7 +152,7 @@
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/home}">Back to Home</a>
+    <a th:href="@{/home}" class="back-home">Back to Home</a>
 </div>
 </body>
 </html>

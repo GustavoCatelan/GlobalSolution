@@ -44,20 +44,20 @@ public class EnergyReadingService implements ServiceDTO<EnergyReading, EnergyRea
     @Override
     public EnergyReading toEntity(EnergyReadingRequest dto) {
 
+        var device = deviceService.findByIdDevice(dto.device().id());
+
         return EnergyReading.builder()
                 .date(dto.date())
                 .consumption(dto.consumption())
                 .production(dto.production())
+                .device(device)
                 .build();
     }
 
     @Override
     public EnergyReadingResponse toResponse(EnergyReading e) {
 
-        Collection<DeviceResponse> device = null;
-
-        if (Objects.nonNull(e.getDevice()) && !e.getDevice().isEmpty())
-            device = e.getDevice().stream().map(deviceService::toResponse).toList();
+        var device = deviceService.toResponse(e.getDevice());
 
         return EnergyReadingResponse.builder()
                 .id(e.getId())

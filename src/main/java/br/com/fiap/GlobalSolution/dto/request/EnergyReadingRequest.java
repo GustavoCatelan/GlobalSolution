@@ -6,7 +6,8 @@ public record EnergyReadingRequest(
 
         LocalDate date,
         String consumption,
-        String production
+        String production,
+        AbstractRequest device
 
 ) {
 }

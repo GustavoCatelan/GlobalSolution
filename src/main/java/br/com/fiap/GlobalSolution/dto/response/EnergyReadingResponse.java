@@ -12,6 +12,6 @@ public record EnergyReadingResponse(
         LocalDate date,
         String consumption,
         String production,
-        Collection<DeviceResponse> device
+        DeviceResponse device
 ) {
 }

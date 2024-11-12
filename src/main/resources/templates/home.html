@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="ISO-8859-1">
     <title>Home</title>
@@ -10,81 +10,99 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            color: #444;
+            background-color: #1c1b45; /* Fundo escuro */
+            color: #fff;
             margin: 0;
             padding: 0;
+            height: 100%;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
         }
 
-        h1 {
-            color: #333;
-            margin-top: 30px;
-            font-weight: 600;
+        header {
+            background-color: #292759; /* Fundo do cabeçalho */
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        li {
-            border-bottom: 1px solid #ddd;
-        }
-
-        li:last-child {
-            border-bottom: none;
-        }
-
-        a {
-            display: block;
-            padding: 15px;
+        header a {
+            color: #fff;
             text-decoration: none;
-            color: #555;
+            padding: 8px 15px;
             font-size: 16px;
-            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
-        a:hover {
-            background-color: #007bff;
+        header a:hover {
+            color: #a4fba6;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+        }
+
+        .main-content h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .main-content .btn-primary {
+            background-color: #c063d9; /* Cor do botão */
+            border: none;
             color: #fff;
             font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
             text-decoration: none;
         }
 
-        h2 {
-            color: #444;
-            margin-top: 20px;
-            font-weight: 500;
+        .main-content .btn-primary:hover {
+            background-color: #a04ec1;
+            color: #fff;
         }
-
     </style>
 </head>
 <body>
-<h1>Home</h1>
 
-<ul>
-    <li><a href="/users">Users</a></li>
-    <li><a href="/address">Address</a></li>
-    <li><a href="/telephone">Telephone</a></li>
-    <li><a href="/device">Device</a></li>
-    <li><a href="/incentiveScore">Incentive Score</a></li>
-    <li><a href="/optimizationAlert">Optimization Alert</a></li>
-    <li><a href="/energyReading">Energy Reading</a></li>
-</ul>
+<header>
+    <nav>
+        <a href="/users">Users</a>
+        <a href="/address">Address</a>
+        <a href="/telephone">Telephone</a>
+        <a href="/device">Device</a>
+        <a href="/incentiveScore">Incentive Score</a>
+        <a href="/optimizationAlert">Optimization Alert</a>
+        <a href="/login">Logout</a>
+    </nav>
+</header>
 
-<ul>
-    <li><a href="/login">Logout</a></li>
-</ul>
+<div>
+    <h1>Global Solution</h1>
+    <p>Nossa ideia inovadora</p>
+</div>
 
 </body>
 </html>
