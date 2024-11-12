@@ -103,7 +103,6 @@
             <th>Date</th>
             <th>Consumption</th>
             <th>Production</th>
-            <th>Device ID</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -112,7 +111,6 @@
             <td th:text="${energyReading.date}"></td>
             <td th:text="${energyReading.consumption}"></td>
             <td th:text="${energyReading.production}"></td>
-            <td th:text="${energyReading.device}"></td>
             <td>
                 <a th:href="@{/showFormForUpdateEnergyReading/{id}(id=${energyReading.id})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/deleteEnergyReading/{id}(id=${energyReading.id})}" class="btn btn-danger">Delete</a>
