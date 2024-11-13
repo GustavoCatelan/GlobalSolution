@@ -98,7 +98,8 @@
             if (response.ok) {
                 const data = await response.json();
 
-                const answer = data.candidates[0].content.parts[0].text;
+                // Ajuste para retornar somente a resposta desejada
+                const answer = data.response;
 
                 document.getElementById("resposta").innerText = answer;
                 console.log("Resposta da API:", answer);
@@ -107,7 +108,6 @@
             }
         }
     </script>
-
 </head>
 <body>
 <h1>API Query</h1>
