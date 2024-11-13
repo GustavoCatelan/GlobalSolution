@@ -64,3 +64,5 @@ git clone https://github.com/GustavoCatelan/GlobalSolution.git
 1. No IntelliJ, execute o aplicativo.
 2. Abra um navegador web.
 3. Acesse a aplicação através do URL: http://localhost:8080/login
+4. username = admin
+5. password = admin123
