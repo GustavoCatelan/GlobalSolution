@@ -14,10 +14,8 @@
             color: #fff;
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
         }
 
@@ -29,6 +27,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: fixed; /* Fix the header at the top */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure header stays on top of content */
         }
 
         .logout-btn {
@@ -76,37 +78,33 @@
             color: #a4fba6;
         }
 
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the left */
+            justify-content: flex-start;
+            max-width: 800px;
+            margin: 80px auto; /* Add margin to push content down so it's not hidden under the header */
+            text-align: left;
+        }
+
         .main-content h1 {
             font-size: 2.5em;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .main-content p {
             font-size: 1.2em;
             color: #ddd;
-            margin-bottom: 30px;
-        }
-
-        .main-content .btn-primary {
-            background-color: #c063d9;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-            padding: 12px 25px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-
-        .main-content .btn-primary:hover {
-            background-color: #a04ec1;
-            color: #fff;
+            margin-top: 0;
         }
 
         .floating-button {
             position: fixed;
-            bottom: 20px;
+            bottom: 175px;
             right: 20px;
             background-color: #007bff;
             color: white;
@@ -116,12 +114,56 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s;
+            z-index: 9999;
         }
 
         .floating-button:hover {
             background-color: #0056b3;
             color: white;
             text-decoration: none;
+        }
+
+        footer {
+            background-color: #292759;
+            color: #fff;
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            font-size: 13px;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .footer-content .team-members,
+        .footer-content .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-content p {
+            margin: 2px 0;
+        }
+
+        .footer-content a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-content a:hover {
+            color: #a4fba6;
         }
     </style>
 </head>
@@ -142,11 +184,40 @@
     <a href="/login" class="logout-btn">Logout</a>
 </header>
 
-<div>
-    <h1>Global Solution</h1>
-    <p>Nossa ideia inovadora</p>
+<div class="main-content">
+    <div class="about-section">
+        <h2>Global Solution</h2>
+        <p>Our website was developed with the purpose of helping residents of small residential networks to monitor and optimize their energy consumption. Through an interactive visual dashboard, it is possible to view real-time data on energy consumption and production, integrating IoT devices and machine learning algorithms to provide insights that assist in optimizing energy usage.</p>
+
+        <h3>Dashboard Features</h3>
+        <ul>
+            <li><strong>Real-Time Monitoring:</strong> Our dashboard displays energy consumption and production in real time, showing the status of solar panels and other renewable energy devices.</li>
+            <li><strong>Analysis and Optimization:</strong> Using machine learning algorithms, we identify consumption patterns, predict peaks, and suggest ideal times for energy usage, maximizing the efficiency and utilization of solar panels and stored energy.</li>
+            <li><strong>Solar Panel and Storage Efficiency:</strong> Integrated with technologies that monitor the efficiency of solar panels and activate storage batteries, our system ensures that energy is used as efficiently as possible, even during periods of low production.</li>
+            <li><strong>Automation and Consumption Reduction:</strong> Allows automation to turn off electronic devices automatically during periods of low need, promoting savings and reducing energy waste.</li>
+            <strong>Encouraging Conscious Consumption:</strong> We use gamification to motivate users to reduce consumption and adopt energy-efficient practices by setting goals and rewarding those who achieve reduction targets.</li>
+        </ul>
+    </div>
 </div>
+
 <a href="/indexIa" class="floating-button">IA</a>
+
+<footer>
+    <div class="footer-content">
+        <div class="team-members">
+            <p><strong>Team Members:</strong></p>
+            <p>Gustavo M. Catelan - RM551823</p>
+            <p>Lucas S. Lopes - RM550790</p>
+            <p>Victor T. Rodrigues - RM97900</p>
+            <p>Murilo Machado - RM550718</p>
+            <p>Gabriel B. Valentim - RM97901</p>
+        </div>
+        <div class="contact-info">
+            <p><strong>Contact Us:</strong></p>
+            <p>Email: <a href="mailto:inovatechfiap@gmail.com">inovatechfiap@gmail.com</a></p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
