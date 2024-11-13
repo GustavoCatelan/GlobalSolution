@@ -77,13 +77,22 @@
             border: none;
         }
 
-        a.btn-danger {
-            background-color: #dc3545;
+        a.btn-success {
+            background-color: #28a745;
             border: none;
         }
 
         a.btn-primary:hover {
             background-color: #0056b3;
+        }
+
+        a.btn-success:hover {
+            background-color: #218838;
+        }
+
+        a.btn-danger {
+            background-color: #dc3545;
+            border: none;
         }
 
         a.btn-danger:hover {
@@ -109,7 +118,7 @@
     <h3>Device List</h3>
     <div class="btn-group">
         <a th:href="@{/addNewDevice}" class="btn btn-primary btn-sm">Add Device</a>
-        <a th:href="@{/energyReading}" class="energy-btn btn-sm">Energy Reading</a>
+        <a th:href="@{/energyReading}" class="btn btn-success btn-sm">Energy Reading</a>
     </div>
     <table style="width: 80%" border="1" class="table table-striped table-responsive-md">
         <thead>
