@@ -51,4 +51,9 @@ public class HomeController {
         return "indexEnergyReading";
     }
 
+    @GetMapping("/indexIa")
+    public String indexIa() {
+        return "indexIa";
+    }
+
 }
