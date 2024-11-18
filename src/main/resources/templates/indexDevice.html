@@ -123,6 +123,7 @@
     <table style="width: 80%" border="1" class="table table-striped table-responsive-md">
         <thead>
         <tr>
+            <th>Device ID</th>
             <th>Type</th>
             <th>Name</th>
             <th>Status</th>
@@ -132,6 +133,7 @@
         </thead>
         <tbody>
         <tr th:each="device : ${allDeviceList}">
+            <td th:text="${device.id}"></td>
             <td th:text="${device.type}"></td>
             <td th:text="${device.name}"></td>
             <td th:text="${device.status}"></td>
